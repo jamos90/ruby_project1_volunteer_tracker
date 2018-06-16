@@ -27,4 +27,15 @@ class Project
     @id = id
   end
 
+  def self.all()
+    sql = "SELECT * FROM projects"
+    project_data = SqlRunner.run(sql)
+    return project_data.map {|project| Project.new(project)}
+  end
+
+  def self.delete()
+    sql = "DELETE FROM projects"
+    project_delete = SqlRunner.run(sql)
+  end
+
 end
