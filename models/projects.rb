@@ -1,14 +1,15 @@
 require_relative('../db/sql_runner.rb')
 
 class Project
-  attr_reader :name, :type, :location, :specilsm_required
+  attr_reader :name, :type, :location, :specilsm_required, :age_requirment
 
   def initialize ( options )
-    @id = options ['id']
+    @id = options ['id'].to_i()
     @name = options ['name']
     @type = options ['type']
     @location = options ['location']
     @specilsm_required = options ['specilsm_required']
+    @age_requirment = options ['age_requirment'].to_i()
   end
 
   def save()
@@ -17,14 +18,15 @@ class Project
       name,
       type,
       location,
-      specilsm_required
+      specilsm_required,
+      age_requirment
       )VALUES (
-        $1,$2,$3,$4
+        $1,$2,$3,$4,$5
         ) RETURNING *"
-    values = [@name, @type, @location, @specilsm_required]
+    values = [@name, @type, @location, @specilsm_required, @age_requirment]
     result = SqlRunner.run(sql,values)
     id = result.first['id']
-    @id = id
+    @id = id.to_i()
   end
 
   def self.all()
