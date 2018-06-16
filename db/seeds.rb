@@ -2,6 +2,8 @@ require('pry')
 require_relative('../models/projects.rb')
 require_relative('../models/volunteers.rb')
 
+Volunteer.delete()
+
 project1 = Project.new({
   'name' => 'Edinburgh Homeless',
   'type' => 'Donation sorting',
