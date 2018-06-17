@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner.rb')
 
 class Project
-  attr_accessor :name, :type, :location, :specilsm_required, :age_requirment, :id
+  attr_accessor :name, :type, :location, :specilsm_required, :age_requirement, :id
 
   def initialize ( options )
     @id = options ['id'].to_i()
@@ -9,7 +9,7 @@ class Project
     @type = options ['type']
     @location = options ['location']
     @specilsm_required = options ['specilsm_required']
-    @age_requirment = options ['age_requirment'].to_i()
+    @age_requirement = options ['age_requirment'].to_i()
   end
 
   def save()
@@ -23,7 +23,7 @@ class Project
       )VALUES (
         $1,$2,$3,$4,$5
         ) RETURNING *"
-    values = [@name, @type, @location, @specilsm_required, @age_requirment]
+    values = [@name, @type, @location, @specilsm_required, @age_requirement]
     result = SqlRunner.run(sql,values)
     id = result.first['id']
     @id = id.to_i()
@@ -38,6 +38,20 @@ class Project
   def self.delete()
     sql = "DELETE FROM projects"
     project_delete = SqlRunner.run(sql)
+  end
+
+  def update()
+    sql = "UPDATE projects SET(
+      name,
+      type,
+      location,
+      specilsm_required,
+      age_requirment
+    ) =
+    ($1,$2,$3,$4,$5)
+    WHERE id = $6"
+    values = [@name, @type, @location, @specilsm_required,@age_requirement]
+    SqlRunner.run(sql,values)
   end
 
 end

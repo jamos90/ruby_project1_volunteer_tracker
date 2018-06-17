@@ -15,7 +15,7 @@ CREATE TABLE projects(
   type VARCHAR(255),
   location VARCHAR(255),
   specilsm_required VARCHAR(255),
-  age_requirment INT4
+  age_requirement INT4
 );
 
 CREATE TABLE bookings(

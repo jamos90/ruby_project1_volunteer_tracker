@@ -12,7 +12,7 @@ project1 = Project.new({
   'type' => 'Donation sorting',
   'location' => 'Edinburgh',
   'specilsm_required' => 'none',
-  'age_requirment' => 18
+  'age_requirement' => 18
   })
 
   project1.save()
@@ -22,7 +22,7 @@ project2 = Project.new({
   'type' => 'Counsoling',
   'location' => 'Edinburgh',
   'specilsm_required' => 'Consuling experience',
-  'age_requirment' => 18
+  'age_requirement' => 18
   })
   project2.save()
 
@@ -31,7 +31,7 @@ project3 = Project.new({
   'type' => 'Donation sorting',
   'location' => 'Edinburgh',
   'specilsm_required' => 'none',
-  'age_requirment' => 18
+  'age_requirement' => 18
   })
 
   project3.save()
