@@ -2,7 +2,7 @@ require_relative("../db/sql_runner.rb")
 
 class Volunteer
 
-  attr_reader :name, :specilsm, :age
+  attr_accessor :name, :specilsm, :age, :id
 
   def initialize (options)
     @id = options ['id'].to_i()
@@ -36,6 +36,27 @@ class Volunteer
     sql = "DELETE FROM volunteers"
     volunteer_date = SqlRunner.run(sql)
   end
+
+  def find_by_id(id)
+   sql = "SELECT * FROM volunteers WHERE id = $1"
+   values = [id]
+   volunteer_data = SqlRunner.run(sql, values).map {|volunteer| Volunteer.new(volunteer)}
+   return volunteer_data.first()
+  end
+
+  def update()
+    sql = "UPDATE volunteers SET (
+      name,
+      specilsm,
+      age
+      ) =
+      ($1,$2,$3)
+       WHERE id = $4"
+    values = [@name, @specilsm, @age, @id]
+    SqlRunner.run(sql,values)
+  end
+
+
 
 
 end

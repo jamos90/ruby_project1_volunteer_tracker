@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner.rb')
 
 class Project
-  attr_reader :name, :type, :location, :specilsm_required, :age_requirment
+  attr_accessor :name, :type, :location, :specilsm_required, :age_requirment, :id
 
   def initialize ( options )
     @id = options ['id'].to_i()
