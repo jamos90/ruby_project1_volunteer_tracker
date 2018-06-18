@@ -31,3 +31,9 @@ get "/projects/:id" do
   @project = Project.find(params['id'])
   erb(:"project/show")
 end
+
+post "/projects/:id/delete" do
+  project = Project.find(params['id'])
+  project.delete()
+  redirect to "/projects"
+end

@@ -79,4 +79,10 @@ class Project
     return results.map {|volunteer| Volunteer.new(volunteer)}
   end
 
+  def delete()
+    sql = "DELETE FROM projects WHERE id = $1"
+    values =[@id]
+    SqlRunner.run(sql,values)
+  end
+
 end
