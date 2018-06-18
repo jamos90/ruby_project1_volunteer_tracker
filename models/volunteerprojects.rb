@@ -7,7 +7,7 @@ class Booking
   def initialize (options)
     @id = options['id']
     @project_id = options ['project_id'].to_i()
-    @volunteer1_id = options ['volunteer_id'].to_i()
+    @volunteer_id = options ['volunteer_id'].to_i()
   end
 
   def save()

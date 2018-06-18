@@ -9,7 +9,7 @@ class Project
     @type = options ['type']
     @location = options ['location']
     @specilsm_required = options ['specilsm_required']
-    @age_requirement = options ['age_requirment'].to_i()
+    @age_requirement = options ['age_requirement'].to_i()
   end
 
   def save()
@@ -57,8 +57,8 @@ class Project
   def volunteers()
     sql = "SELECT volunteers.* FROM volunteers
     INNER JOIN bookings
-    ON bookings.volunteer_id = volunteers.id
-    WHERE projects_id = $1"
+    ON volunteers.id = bookings.volunteer_id
+    WHERE project_id = $1"
     values = [@id]
     results = SqlRunner.run(sql,values)
     return results.map {|volunteer| Volunteer.new(volunteer)}

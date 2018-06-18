@@ -56,6 +56,17 @@ class Volunteer
     SqlRunner.run(sql,values)
   end
 
+  def projects()
+    sql = "SELECT projects.* FROM projects
+    INNER JOIN bookings
+    ON bookings.project_id = projects.id
+    WHERE volunteer_id = $1"
+    values = [@id]
+    resluts = SqlRunner.run(sql, values)
+    return resluts.map {|project| Project.new(project)}
+  end
+
+
 
 
 
