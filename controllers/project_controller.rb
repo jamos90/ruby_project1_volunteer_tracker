@@ -20,3 +20,14 @@ get "/projects/:id/edit" do
   @project = Project.find(params['id'])
   erb(:"project/edit")
 end
+
+post "/projects/:id" do
+  @project = Project.find(params['id'])
+  @project.update()
+  redirect to "/projects/#{params['id']}"
+end
+
+get "/projects/:id" do
+  @project = Project.find(params['id'])
+  erb(:show)
+end

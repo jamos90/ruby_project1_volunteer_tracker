@@ -1,4 +1,4 @@
-<form method = post action = "/projects" >
+<form method = "post" action = "/projects/<%=@project.id %>" >
   <label for="project-name-field"> Project Name: </label>
   <input
   value = "<%=@project.name%>"
@@ -32,7 +32,7 @@
   <input
   type ="number"
   name = "age_required"
-  value = "<%=@project.age_requirement%>"
+  value = "<%=@project.age_requirement %>"
   id="project-age-requirement-field"/>
 
   <input type ="submit" value ="Update project <%=@project.name%>" />
