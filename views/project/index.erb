@@ -5,4 +5,15 @@
 <p> Project type: <%=project.type%></p>
 <br>
 <form action="/projects/<%=@projects.first.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+
+<a href = "/projects/<%=project.id%>"> Full details </a>
+<br>
+
+<a href = "/projects/<%=@projects.first.id%>/project.volunteers"> Find volunteers signed up to this project </a>
+
+
 <% end  %>
+
+<br>
+
+<a href = "/"> Home </a>

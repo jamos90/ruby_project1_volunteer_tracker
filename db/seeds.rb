@@ -1,7 +1,7 @@
 require('pry')
 require_relative('../models/projects.rb')
 require_relative('../models/volunteers.rb')
-require_relative('../models/volunteerprojects.rb')
+require_relative('../models/bookings.rb')
 
 Booking.delete()
 Project.delete()
