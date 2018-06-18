@@ -1,3 +1,4 @@
+require('pry')
 require_relative('../models/projects')
 also_reload( '../models/*' )
 
@@ -13,4 +14,9 @@ end
 post '/projects' do
   Project.new(params).save()
   redirect to '/projects'
+end
+
+get "/projects/:id/edit" do
+  @project = Project.find(params['id'])
+  erb(:"project/edit")
 end

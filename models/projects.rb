@@ -1,3 +1,4 @@
+require('pry')
 require_relative('../db/sql_runner.rb')
 
 class Project
@@ -44,6 +45,14 @@ class Project
     sql = "DELETE FROM projects WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM projects WHERE id = $1"
+    values = [id]
+    project = SqlRunner.run(sql,values)
+    array = project.map {|project| Project.new(project)}
+    return array[0]
   end
 
   def update()
