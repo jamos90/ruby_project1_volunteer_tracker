@@ -21,8 +21,8 @@ post '/volunteers' do
 end
 
 get '/volunteers/:id/edit' do
-  @volunteers = Volunteer.find(params['id'])
-  erb(:edit)
+  @volunteer = Volunteer.find(params['id'])
+  erb(:'volunteer/edit')
 end
 
 post '/volunteers/:id' do
