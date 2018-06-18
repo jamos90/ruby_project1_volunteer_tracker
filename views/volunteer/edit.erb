@@ -1,0 +1,26 @@
+<form method = "post" action = "/volunteers/<%=@volunteer.id %>" >
+  <label for="volunteer-name-field"> Volunteer Name: </label>
+  <input
+  value = "<%=@volunteer.name%>"
+  type ="text"
+  name = "name"
+  id= "volunteer-name-field"/>
+
+
+  <label for="volunteer-age-field"> Volunteer Age: </label>
+  <input
+  type ="number"
+  name = "age"
+  value= "<%=@volunteer.age%>"
+  id= "project-type-field"/>
+
+  <label for="volunteer-specilsm-field"> Volunteer Specilsm: </label>
+  <input
+  type ="text"
+  name = "location"
+  value = "<%=@volunteer.specilsm%>"
+  id= "project-location-field"/>
+
+  <input type ="submit" value ="Update project <%=@volunteer.name%>" />
+
+</form>

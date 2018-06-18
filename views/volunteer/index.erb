@@ -3,10 +3,9 @@
 <%@volunteers.each do |volunteer|  %>
 
 <p> Volunteer name: <%=volunteer.name%></p>
-<p> Volunteer age: <%=volunteer.age%></p>
-<p> Volunteer specilsm <%=volunteer.specilsm  %>
 
 <br>
 <%end%>
+<a href = "volunteers/<%=volunteer.id%>"> Full detials </a>
 
 <a href = "/"> Home </a>
