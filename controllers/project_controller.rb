@@ -29,5 +29,5 @@ end
 
 get "/projects/:id" do
   @project = Project.find(params['id'])
-  erb(:show)
+  erb(:"project/show")
 end
