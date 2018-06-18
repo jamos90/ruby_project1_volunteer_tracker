@@ -34,13 +34,23 @@ project3 = Project.new({
   'age_requirement' => 18
   })
 
-  project3.save()
+  project4 = Project.new({
+    'name' => 'Glasgow Homeless',
+    'type' => 'Donation collection',
+    'location' => 'Glasgow',
+    'specilsm_required' => 'none',
+    'age_requirement' => 16
+    })
+
+  project4.save()
 
   volunteer1 = Volunteer.new({
     'name' => 'James',
     'specilsm' => 'Architecture',
     'age' => 18
     })
+
+
   volunteer1.save()
 
   volunteer2 = Volunteer.new({
