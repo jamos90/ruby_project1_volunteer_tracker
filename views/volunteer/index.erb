@@ -6,6 +6,8 @@
 
 <br>
 <a href = "/volunteers/<%=volunteer.id%>"> Full detials </a>
+
+<form action="/volunteers/<%=@volunteers.first.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
 <%end%>
 
 <a href = "/"> Home </a>
