@@ -1,11 +1,11 @@
 <h1> This is a page of all saved volunteers</h1>
 
-<%@volunteers.each do |volunteer|  %>
+<%@volunteers.each do |volunteer|%>
 
 <p> Volunteer name: <%=volunteer.name%></p>
 
 <br>
+<a href = "/volunteers/<%=volunteer.id%>"> Full detials </a>
 <%end%>
-<a href = "volunteers/<%=volunteer.id%>"> Full detials </a>
 
 <a href = "/"> Home </a>

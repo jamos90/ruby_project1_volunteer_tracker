@@ -2,12 +2,12 @@ require_relative("../db/sql_runner.rb")
 
 class Volunteer
 
-  attr_accessor :name, :specilsm, :age, :id
+  attr_accessor :name, :specialism, :age, :id
 
   def initialize (options)
     @id = options ['id'].to_i()
     @name = options ['name']
-    @specilsm = options ['specilsm']
+    @specialism = options ['specialism']
     @age = options ['age'].to_i()
   end
 
@@ -15,12 +15,12 @@ class Volunteer
     sql = "INSERT INTO volunteers
     (
       name,
-      specilsm,
+      specialism,
       age
       ) VALUES (
         $1, $2, $3
         ) RETURNING *"
-    values = [@name, @specilsm, @age]
+    values = [@name, @specialism, @age]
     resluts = SqlRunner.run(sql, values)
     id = resluts.first['id']
     @id = id.to_i()
@@ -37,7 +37,7 @@ class Volunteer
     volunteer_date = SqlRunner.run(sql)
   end
 
-  def find_by_id(id)
+  def self.find(id)
    sql = "SELECT * FROM volunteers WHERE id = $1"
    values = [id]
    volunteer_data = SqlRunner.run(sql, values).map {|volunteer| Volunteer.new(volunteer)}
@@ -47,12 +47,12 @@ class Volunteer
   def update()
     sql = "UPDATE volunteers SET (
       name,
-      specilsm,
+      specialism,
       age
       ) =
       ($1,$2,$3)
        WHERE id = $4"
-    values = [@name, @specilsm, @age, @id]
+    values = [@name, @specialism, @age, @id]
     SqlRunner.run(sql,values)
   end
 

@@ -2,14 +2,14 @@ require('pry')
 require_relative('../db/sql_runner.rb')
 
 class Project
-  attr_accessor :name, :type, :location, :specilsm_required, :age_requirement, :id
+  attr_accessor :name, :type, :location, :specialism_required, :age_requirement, :id
 
   def initialize ( options )
     @id = options ['id'].to_i()
     @name = options ['name']
     @type = options ['type']
     @location = options ['location']
-    @specilsm_required = options ['specilsm_required']
+    @specialism_required = options ['specialism_required']
     @age_requirement = options ['age_requirement'].to_i()
   end
 
@@ -19,12 +19,12 @@ class Project
       name,
       type,
       location,
-      specilsm_required,
+      specialism_required,
       age_requirement
       )VALUES (
         $1,$2,$3,$4,$5
         ) RETURNING *"
-    values = [@name, @type, @location, @specilsm_required, @age_requirement]
+    values = [@name, @type, @location, @specialism_required, @age_requirement]
     result = SqlRunner.run(sql,values)
     id = result.first['id']
     @id = id.to_i()
@@ -60,12 +60,12 @@ class Project
       name,
       type,
       location,
-      specilsm_required,
+      specialism_required,
       age_requirement
     ) =
     ($1,$2,$3,$4,$5)
     WHERE id = $6"
-    values = [@name, @type, @location, @specilsm_required,@age_requirement, @id]
+    values = [@name, @type, @location, @specialism_required,@age_requirement, @id]
     SqlRunner.run(sql,values)
   end
 

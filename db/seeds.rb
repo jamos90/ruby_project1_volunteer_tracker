@@ -11,7 +11,7 @@ project1 = Project.new({
   'name' => 'Edinburgh Homeless',
   'type' => 'Donation sorting',
   'location' => 'Edinburgh',
-  'specilsm_required' => 'none',
+  'specialism_required' => 'none',
   'age_requirement' => 18
   })
 
@@ -21,7 +21,7 @@ project2 = Project.new({
   'name' => 'Edinburgh Drug Rehab',
   'type' => 'Counsoling',
   'location' => 'Edinburgh',
-  'specilsm_required' => 'Consuling experience',
+  'specialism_required' => 'Consuling experience',
   'age_requirement' => 18
   })
   project2.save()
@@ -30,7 +30,7 @@ project3 = Project.new({
   'name' => 'Edinburgh Homeless',
   'type' => 'Donation sorting',
   'location' => 'Edinburgh',
-  'specilsm_required' => 'none',
+  'specialism_required' => 'none',
   'age_requirement' => 18
   })
 
@@ -38,7 +38,7 @@ project3 = Project.new({
     'name' => 'Glasgow Homeless',
     'type' => 'Donation collection',
     'location' => 'Glasgow',
-    'specilsm_required' => 'none',
+    'specialism_required' => 'none',
     'age_requirement' => 16
     })
 
@@ -46,7 +46,7 @@ project3 = Project.new({
 
   volunteer1 = Volunteer.new({
     'name' => 'James',
-    'specilsm' => 'Architecture',
+    'specialism' => 'Architecture',
     'age' => 18
     })
 
@@ -55,14 +55,14 @@ project3 = Project.new({
 
   volunteer2 = Volunteer.new({
     'name' => 'Jess',
-    'specilsm' => 'Counsoling',
+    'specialism' => 'Counsoling',
     'age' => 18
     })
   volunteer2.save()
 
   volunteer3 = Volunteer.new({
     'name' => 'Joe',
-    'specilsm' => 'First Aid',
+    'specialism' => 'First Aid',
     'age' => 18
       })
   volunteer3.save()

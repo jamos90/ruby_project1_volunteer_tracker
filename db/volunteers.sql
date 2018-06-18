@@ -5,7 +5,7 @@ DROP TABLE volunteers;
 CREATE TABLE volunteers(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  specilsm VARCHAR(255),
+  specialism VARCHAR(255),
   age INT4
 );
 
@@ -14,7 +14,7 @@ CREATE TABLE projects(
   name VARCHAR(255),
   type VARCHAR(255),
   location VARCHAR(255),
-  specilsm_required VARCHAR(255),
+  specialism_required VARCHAR(255),
   age_requirement INT4
 );
 
