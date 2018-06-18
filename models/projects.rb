@@ -40,6 +40,12 @@ class Project
     project_delete = SqlRunner.run(sql)
   end
 
+  def self.delete_by_id(id)
+    sql = "DELETE FROM projects WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def update()
     sql = "UPDATE projects SET(
       name,

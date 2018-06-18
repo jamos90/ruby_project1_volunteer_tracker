@@ -66,6 +66,12 @@ class Volunteer
     return resluts.map {|project| Project.new(project)}
   end
 
+  def self.delete_by_id(id)
+    sql = "DELETE FROM volunteers WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
 
 
 

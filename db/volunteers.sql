@@ -20,6 +20,6 @@ CREATE TABLE projects(
 
 CREATE TABLE bookings(
   id SERIAL4 PRIMARY KEY,
-  volunteer_id INT4 references volunteers(id),
-  project_id INT4 references projects(id)
+  volunteer_id INT4 references volunteers(id) ON DELETE CASCADE,
+  project_id INT4 references projects(id) ON DELETE CASCADE
 );

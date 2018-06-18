@@ -5,7 +5,7 @@ class Booking
   attr_reader :project_id, :volunteer_id, :id
 
   def initialize (options)
-    @id = options['id']
+    @id = options['id'].to_i()
     @project_id = options ['project_id'].to_i()
     @volunteer_id = options ['volunteer_id'].to_i()
   end
@@ -26,6 +26,18 @@ class Booking
   def self.delete()
     sql = "DELETE FROM bookings"
     SqlRunner.run(sql)
+  end
+
+  def self.delete_by_id(id)
+    sql = "DELETE FROM bookings WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql,values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM bookings"
+    results = SqlRunner.run(sql)
+    return results.map {|booking| Booking.new(booking)}
   end
 
 
