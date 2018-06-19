@@ -14,12 +14,12 @@ end
 get "/projects/:id/add" do
 @projects = Project.find(params['id'])
 @volunteers = Volunteer.find(params['id'])
-erb(:"project/add") 
+erb(:"project/add")
 end
 
 get "/projects/:id/volunteers" do
-  project = Project.find(params['id'])
-  @volunteers = project.volunteers()
+  @project = Project.find(params['id'])
+  @volunteers = @project.volunteers()
   erb(:'project/volunteers')
 end
 

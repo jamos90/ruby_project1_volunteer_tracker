@@ -1,5 +1,8 @@
-<h1> Users linked to a project </h1>
-<% for volunteer in @volunteers  %>
-  <%= volunteer.name  %>
+<h1> Volunteers signed up to to <%=@project.name %> </h1>
+<% for volunteer in @volunteers do%>
+  <%= volunteer.name %>
+  <%=volunteer.age %>
+  <%=volunteer.specialism%>
 
+  <br>
 <% end %>
