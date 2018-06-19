@@ -7,16 +7,15 @@ get '/projects' do
   erb(:"project/index")
 end
 
+get '/projects/new' do
+  erb(:"project/new")
+end
+
 get "/projects/:id/volunteers" do
   project = Project.find(params['id'])
   @volunteers = project.volunteers()
   erb(:'project/volunteers')
 end
-
-get '/projects/new' do
-  erb(:"project/new")
-end
-
 
 get '/projects/:id' do
   @project = Project.find(params['id'])
@@ -37,6 +36,7 @@ end
 
 get "/projects/:id/add" do
 @project = Project.find(params['id'])
+
 erb(:"project/add")
 end
 
