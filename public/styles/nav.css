@@ -1,0 +1,11 @@
+nav {
+  display: inline-block;
+  text-align: center;
+  background-color: red;
+}
+
+
+a {
+  display: inline;
+  text-align: center;
+}

@@ -85,6 +85,7 @@ project3 = Project.new({
       })
   volunteer3.save()
 
+
   booking1 = Booking.new({
     'project_id'   => project1.id,
     'volunteer_id' => volunteer1.id

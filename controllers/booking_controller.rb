@@ -18,7 +18,7 @@ post '/bookings' do
   @project = Project.find(params['project_id'])
   @volunteer =
   Volunteer.find(params['volunteer_id'])
-  if (!@project.is_full?) && (@project.specialism_required == @volunteer.specialism || @project.specialism_required == nil)
+  if (!@project.is_full? && @volunteer.age > @project.age_requirement) && (@project.specialism_required == @volunteer.specialism || @project.specialism_required == 'none')
     @project.add_volunteers()
     @booking.save()
   else
