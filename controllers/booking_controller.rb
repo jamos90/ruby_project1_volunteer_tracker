@@ -8,6 +8,8 @@ get '/bookings' do
 end
 
 get '/bookings/new' do
+  @projects = Project.all
+  @volunteers = Volunteer.all
   erb(:"booking/new")
 end
 

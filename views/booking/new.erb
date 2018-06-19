@@ -1,39 +1,20 @@
-<h1> Create new project</h3>
+<h1> Add a user to a project</h3>
+ <form action = "/bookings" method = "post" >
+   <label>
+     Select a project:
+     <select name = "project_id">
+       <% for project in @projects%>
+       <option value ="<%=project.id  %>"> <%=project.name %> </option>
+       <%end %>
+     </select>
 
-<form method = "post" action = "/bookings" >
-  <label for="project-name-field"> Project Name: </label>
-  <input
-  type ="text"
-  name = "project name"
-  value = "<%=  %>"
-  id= "project-name-field"/>
+     <label>
+       Select a volunteer:
+       <select name = "volunteer_id">
+         <%for volunteer in @volunteers%>
+         <option value = "<%=volunteer.id%>"> <%=volunteer.name%> - <%=volunteer.specialism%></option>
+         <%end%>
+       </select>
 
-
-
-  <label for="project-type-field"> Project Type: </label>
-  <input
-  type ="text"
-  name = "type"
-  id= "project-type-field"/>
-
-  <label for="project-location-field"> Project Location: </label>
-  <input
-  type ="text"
-  name = "location"
-  id= "project-location-field"/>
-
-  <label for="project-specialism_required-field"> Project specialism: </label>
-  <input
-  type ="text"
-  name = "specialism_required"
-  id= "project-specialism_required-field"/>
-
-  <label for="project-age-requirement-field"> Project Age requirement: </label>
-  <input
-  type ="number"
-  name = "age_required"
-  id="project-age-requirement-field"/>
-
-  <input type ="submit" value ="Create project" />
-
+       <input class="btn btn--action" type='submit' value="Add">
 </form>
