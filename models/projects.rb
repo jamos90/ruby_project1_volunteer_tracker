@@ -2,7 +2,7 @@ require('pry')
 require_relative('../db/sql_runner.rb')
 
 class Project
-  attr_accessor :name, :type, :location, :specialism_required, :age_requirement, :id
+  attr_accessor :name, :type, :location, :specialism_required, :age_requirement, :id, :capacity
 
   def initialize ( options )
     @id = options ['id'].to_i()
@@ -11,6 +11,8 @@ class Project
     @location = options ['location']
     @specialism_required = options ['specialism_required']
     @age_requirement = options ['age_requirement'].to_i()
+    # @volunteer_list = options['volunteer_list']
+    @capacity = options ['capacity'].to_i
   end
 
   def save()
@@ -20,11 +22,13 @@ class Project
       type,
       location,
       specialism_required,
-      age_requirement
+      age_requirement,
+      volunteer_list,
+      capacity
       )VALUES (
-        $1,$2,$3,$4,$5
+        $1,$2,$3,$4,$5,$6,$7
         ) RETURNING *"
-    values = [@name, @type, @location, @specialism_required, @age_requirement]
+    values = [@name, @type, @location, @specialism_required, @age_requirement,@volunteer_list, @capacity]
     result = SqlRunner.run(sql,values)
     id = result.first['id']
     @id = id.to_i()
@@ -63,9 +67,9 @@ class Project
       specialism_required,
       age_requirement
     ) =
-    ($1,$2,$3,$4,$5)
-    WHERE id = $6"
-    values = [@name, @type, @location, @specialism_required,@age_requirement, @id]
+    ($1,$2,$3,$4,$5,$6,$7)
+    WHERE id = $8"
+    values = [@name, @type, @location, @specialism_required,@age_requirement,@volunteer_list,@capacity, @id]
     SqlRunner.run(sql,values)
   end
 
@@ -84,5 +88,18 @@ class Project
     values =[@id]
     SqlRunner.run(sql,values)
   end
+
+  def is_full?
+    return true if @capacity == 0
+    return false
+  end
+
+  def add_volunteers()
+    @capacity -= 1
+  end
+  #
+  # def volunteer_total
+  #   return @volunteers.length()
+  # end
 
 end

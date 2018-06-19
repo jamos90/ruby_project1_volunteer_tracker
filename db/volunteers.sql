@@ -15,7 +15,9 @@ CREATE TABLE projects(
   type VARCHAR(255),
   location VARCHAR(255),
   specialism_required VARCHAR(255),
-  age_requirement INT4
+  age_requirement INT4,
+  volunteer_list integer ARRAY[4],
+  capacity INT4
 );
 
 CREATE TABLE bookings(

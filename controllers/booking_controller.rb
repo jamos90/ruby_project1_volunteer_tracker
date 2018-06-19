@@ -7,7 +7,7 @@ get '/bookings' do
   erb(:"booking/index")
 end
 
-get '/bookings/new' do
+get '/bookings/:id/new' do
   @projects = Project.all
   @volunteers = Volunteer.all
   erb(:"booking/new")
@@ -20,7 +20,13 @@ end
 
 post '/bookings' do
   @booking = Booking.new(params)
-  @booking.save()
+  @project = Project.find(params['project_id'])
+  if @project.is_full?
+    redirect to '/bookings/error'
+  else
+    @project.add_volunteers()
+    @booking.save()
+  end
   redirect to '/bookings'
 end
 
