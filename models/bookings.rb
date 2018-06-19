@@ -43,8 +43,8 @@ class Booking
   def self.find(id)
     sql = "SELECT * FROM bookings WHERE id = $1"
     values = [id]
-    results = SqlRunner.run(sql,values)
-    return results.map { |booking| Booking.new(booking)}
+    results = SqlRunner.run(sql,values).map {|booking| Booking.new(booking)}
+    return results.first()
   end
 
 

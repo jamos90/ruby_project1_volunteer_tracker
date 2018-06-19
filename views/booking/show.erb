@@ -1,13 +1,13 @@
-<h1> <%=@booking.name %> </h1>
+<h1> <%=@booking %> </h1>
 
 <p> Name: <%=@booking.project.name%> </p>
 <p> Type: <%=@booking.project.type%> </p>
 <p> specialism: <%=@booking.project.location%> </p>
 <p> Age requirement: <%=@booking.project.age_requirement%> </p>
 
-<a href ="/projects/<%=@booking.id%>/edit"> Edit this project </a>
+<a href ="/bookings/<%=@booking.id%>/edit"> Edit this project </a>
 <br>
-<a href ="/projects/<%=@project.id%>/add"> Add volunteers to this project </a>
+<a href ="/projects/<%=@booking.id%>/add"> Add volunteers to this project </a>
 
 <br>
 
