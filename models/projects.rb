@@ -9,9 +9,8 @@ class Project
     @name = options ['name']
     @type = options ['type']
     @location = options ['location']
-    @specialism_required = options ['specialism_required']
+    @specialism_required = options ['specialism_required'] #this will be a string with "Counsoling" or nil
     @age_requirement = options ['age_requirement'].to_i()
-    # @volunteer_list = options['volunteer_list']
     @capacity = options ['capacity'].to_i
   end
 
@@ -23,12 +22,11 @@ class Project
       location,
       specialism_required,
       age_requirement,
-      volunteer_list,
       capacity
       )VALUES (
-        $1,$2,$3,$4,$5,$6,$7
+        $1,$2,$3,$4,$5,$6
         ) RETURNING *"
-    values = [@name, @type, @location, @specialism_required, @age_requirement,@volunteer_list, @capacity]
+    values = [@name, @type, @location, @specialism_required, @age_requirement, @capacity]
     result = SqlRunner.run(sql,values)
     id = result.first['id']
     @id = id.to_i()
@@ -65,11 +63,12 @@ class Project
       type,
       location,
       specialism_required,
-      age_requirement
+      age_requirement,
+      capacity
     ) =
-    ($1,$2,$3,$4,$5,$6,$7)
-    WHERE id = $8"
-    values = [@name, @type, @location, @specialism_required,@age_requirement,@volunteer_list,@capacity, @id]
+    ($1,$2,$3,$4,$5,$6)
+    WHERE id = $7"
+    values = [@name, @type, @location, @specialism_required,@age_requirement,@capacity, @id]
     SqlRunner.run(sql,values)
   end
 

@@ -2,6 +2,8 @@ require('pry')
 require_relative('../models/projects.rb')
 require_relative('../models/volunteers.rb')
 require_relative('../models/bookings.rb')
+require_relative('../models/special_project.rb')
+require_relative('../models/special_booking.rb')
 
 Booking.delete()
 Project.delete()
@@ -48,6 +50,17 @@ project3 = Project.new({
     })
 
   project4.save()
+
+  special_project1 = SpecialProject.new({
+    'name' => 'Glasgow Homeless',
+    'type' => 'Donation collection',
+    'location' => 'Glasgow',
+    'specialism_required' => 'none',
+    'age_requirement' => 16,
+    'capacity' => 10
+    })
+
+    special_project1.save()
 
   volunteer1 = Volunteer.new({
     'name' => 'James',

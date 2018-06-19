@@ -21,11 +21,13 @@ end
 post '/bookings' do
   @booking = Booking.new(params)
   @project = Project.find(params['project_id'])
-  if @project.is_full?
-    redirect to '/bookings/error'
-  else
+  @volunteer =
+  Volunteer.find(params['volunteer_id'])
+  if (!@project.is_full?) && (@project.specialism_required == @volunteer.specialism || @project.specialism_required == nil)
     @project.add_volunteers()
     @booking.save()
+  else
+    redirect to '/bookings/error'
   end
   redirect to '/bookings'
 end
