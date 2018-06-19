@@ -11,6 +11,12 @@ get '/projects/new' do
   erb(:"project/new")
 end
 
+get "/projects/:id/add" do
+@projects = Project.find(params['id'])
+@volunteers = Volunteer.find(params['id'])
+erb(:"project/add") 
+end
+
 get "/projects/:id/volunteers" do
   project = Project.find(params['id'])
   @volunteers = project.volunteers()
@@ -32,12 +38,6 @@ end
 get "/projects/:id/edit" do
   @project = Project.find(params['id'])
   erb(:"project/edit")
-end
-
-get "/projects/:id/add" do
-@project = Project.find(params['id'])
-
-erb(:"project/add")
 end
 
 post "/projects/:id" do

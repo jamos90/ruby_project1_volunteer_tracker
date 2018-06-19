@@ -7,15 +7,10 @@ get '/bookings' do
   erb(:"booking/index")
 end
 
-get '/bookings/:id/new' do
+get '/bookings/new' do
   @projects = Project.all
   @volunteers = Volunteer.all
   erb(:"booking/new")
-end
-
-get '/bookings/:id' do
-  @booking = Booking.find(params['id'])
-  erb(:'booking/show')
 end
 
 post '/bookings' do
@@ -30,6 +25,15 @@ post '/bookings' do
     redirect to '/bookings/error'
   end
   redirect to '/bookings'
+end
+
+get '/bookings/error' do
+  erb(:'booking/error')
+end
+
+get '/bookings/:id' do
+  @booking = Booking.find(params['id'])
+  erb(:'booking/show')
 end
 
 get '/bookings/:id/edit' do

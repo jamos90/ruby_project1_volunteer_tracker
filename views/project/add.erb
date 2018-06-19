@@ -1,8 +1,20 @@
-<h1> Add a user to this project</h3>
+<h1> Add a user to a project</h3>
+ <form action = "/bookings" method = "post" >
+   <label>
+     Select a project:
+     <select name = "project_id">
+       <% for project in @projects%>
+       <option value ="<%=project.id  %>"> <%=project.name %> </option>
+       <%end %>
+     </select>
 
-<form method = post action = "/projects" >
-  <label for="volunteer-selection">Select a volunteer to add:</label>
-  <select name="volunteers" id="pizza-selection">
-    <option value="volunteer1.name"><%=volunteer1.name%></option>
-    <option value="volunteer2.name"><%=volunteer2.name%></option>
-  </select>
+     <label>
+       Select a volunteer:
+       <select name = "volunteer_id">
+         <%for volunteer in @volunteers%>
+         <option value = "<%=volunteer.id%>"> <%=volunteer.name%>  <%=volunteer.specialism%></option>
+         <%end%>
+       </select>
+
+       <input class="btn btn--action" type='submit' value="Add">
+</form>
