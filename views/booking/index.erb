@@ -1,7 +1,7 @@
 <h1>  Bookings Page </h1>
 <%@bookings.each do |booking|%>
 
-<p> Project name: <%=booking.project_id %> </p>
-<p> Volunteer name: <%=booking.volunteer_id%> </p>
+<p> Project name: <%=booking.project.name%> </p>
+<p> Volunteer name: <%=booking.volunteer.name%> </p>
 
 <%end%>

@@ -7,23 +7,37 @@ get '/projects' do
   erb(:"project/index")
 end
 
-get '/projects/:id' do
-  @project = Project.find(params['id'])
-  erb(:"project/show")
+get "/projects/:id/volunteers" do
+  project = Project.find(params['id'])
+  @volunteers = project.volunteers()
+  erb(:'project/volunteers')
 end
 
 get '/projects/new' do
   erb(:"project/new")
 end
 
+
+get '/projects/:id' do
+  @project = Project.find(params['id'])
+  erb(:"project/show")
+end
+
+
 post '/projects' do
    Project.new(params).save()
   redirect to '/projects'
 end
 
+
 get "/projects/:id/edit" do
   @project = Project.find(params['id'])
   erb(:"project/edit")
+end
+
+get "/projects/:id/add" do
+@project = Project.find(params['id'])
+erb(:"project/add")
 end
 
 post "/projects/:id" do
@@ -36,8 +50,3 @@ post "/projects/:id/delete" do
   project.delete()
   redirect to "/projects"
 end
-
-# get "/projects/:id/:volunteer" do
-#   @project = Project.find(params['id'])
-#   return @project.volunteers()
-# end

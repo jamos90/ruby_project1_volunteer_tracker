@@ -40,6 +40,28 @@ class Booking
     return results.map {|booking| Booking.new(booking)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM bookings WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql,values)
+    return results.map { |booking| Booking.new(booking)}
+  end
+
+
+  def project()
+    sql = "SELECT * FROM projects WHERE id = $1"
+    values = [@project_id]
+    project = SqlRunner.run(sql, values).first
+    return Project.new(project)
+  end
+
+  def volunteer()
+    sql = "SELECT * FROM volunteers WHERE id = $1"
+    values = [@volunteer_id]
+    volunteer = SqlRunner.run(sql, values).first
+    return Volunteer.new(volunteer)
+  end
+
 
 
 end
