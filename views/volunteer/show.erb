@@ -1,5 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Volunteers:all</title>
+    <link href ="/styles/volunteer_show.css" rel = "stylesheet" />
+  </head>
+  <body>
+
 <h1> <%=@volunteer.name %> </h1>
 
+<img src ="/volunteer_images/profile.jpg">
 <p> Name: <%=@volunteer.name%> </p>
 <p> Age: <%=@volunteer.age%> </p>
 <p> Specialism: <%=@volunteer.specialism%> </p>
@@ -12,3 +22,6 @@
 <a href = "/"> Home </a>
 <br>
 <a href = "/volunteers"> All Volunteers </a>
+
+</body>
+</html>

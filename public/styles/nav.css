@@ -1,7 +1,12 @@
 nav {
-  display: inline-block;
+  display: inline;
   text-align: center;
-  background-color: red;
+}
+
+li {
+  display: inline;
+  text-align: center;
+  margin: 1em;
 }
 
 
