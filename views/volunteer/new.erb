@@ -1,8 +1,9 @@
 <h1> Create a new Volunteers</h3>
 
 <form method = post action = "/volunteers" >
-  <label for="volunteer-name-field"> Name: </label>
+  <label for="volunteer-name-field"> Full Name: </label>
   <input
+  required
   type ="text"
   name = "name"
   id= "volunteer-name-field"/>
@@ -14,6 +15,7 @@
     <option value = "Counselling"> Counselling </option>
     <option value = "First Aid"> First Aid </option>
     <option value = "Driving"> Driving </option>
+    <input required/>
     </select>
   </label>
 
@@ -25,6 +27,7 @@
   id= "volunteer-specialism-field"/> -->
 
   <label for="volunteer-age-field"> Age<input
+    required
   type ="number"
   name = "age"
   max = 99

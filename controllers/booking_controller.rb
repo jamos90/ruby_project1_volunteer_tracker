@@ -57,7 +57,7 @@ post '/bookings/:id/delete' do
   @project = Project.find(booking.project_id)
   # if !@project.is_empty
   @project.remove_volunteers
-  
+
   booking.delete()
   @project.update()
 

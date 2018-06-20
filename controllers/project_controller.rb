@@ -4,6 +4,8 @@ require_relative('../models/day')
 also_reload( '../models/*' )
 
 get '/projects' do
+  # if params[:search]
+
   @projects = Project.all()
   erb(:"project/index")
 end
@@ -11,6 +13,11 @@ end
 get '/projects/days' do
   @project = Project.all()
   erb(:'project/day')
+end
+
+get '/projects/available' do
+@projects = Project.all()
+erb(:'project/available_projects')
 end
 
 

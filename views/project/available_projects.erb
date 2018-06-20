@@ -1,0 +1,12 @@
+<h1> Bellow are all that still require volunteers</h1>
+<% @projects.each do |project|  %>
+<%if project.capacity != 0  %>
+<p> Project name: <%=project.name%></p>
+<p> Project type: <%=project.type%></p>
+<p> Spaces available: <%=project.capacity%></p>
+Add volunteers to this project: <a href = "/bookings/new"> Create a new booking</a>
+<br>
+
+<%end%>
+<%end%>
+<br>

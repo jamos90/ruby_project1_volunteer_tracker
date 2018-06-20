@@ -6,6 +6,17 @@
   name = "name"
   id= "volunteer-name-field"/>
 
+  <label>
+    Select a volunteer specialism (for general volunteers please select none):
+    <select name = "specialism">
+
+      <option value = "Driving"> none </option>
+    <option value = "Counselling"> Counselling </option>
+    <option value = "First Aid"> First Aid </option>
+    <option value = "Driving"> Driving </option>
+    </select>
+  </label>
+
 
   <label for="volunteer-age-field"> Volunteer Age: </label>
   <input
@@ -14,12 +25,12 @@
   value= "<%=@volunteer.age%>"
   id= "project-type-field"/>
 
-  <label for="volunteer-specialism-field"> Volunteer specialism: </label>
+  <!-- <label for="volunteer-specialism-field"> Volunteer specialism: </label>
   <input
   type ="text"
   name = "location"
   value = "<%=@volunteer.specialism%>"
-  id= "project-location-field"/>
+  id= "project-location-field"/> -->
 
   <input type ="submit" value ="Update project <%=@volunteer.name%>" />
 

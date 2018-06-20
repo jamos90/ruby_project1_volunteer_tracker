@@ -120,4 +120,25 @@ class Project
     return day_results.map {|day| Day.new(day)}
   end
 
+  # def available_projects()
+  #   @project = Project.all()
+  #   return @project if !project.is_full?
+  # end
+
+  def self.filter_by_location(location_find)
+    @projects = Project.all()
+    filtered_projects = @projects.find_all {|project| project.location == location_find}
+    return filtered_projects
+  end
+
+  def self.filter_by_specilism(specialism)
+    @projects = Project.all()
+    filtered_projects = @projects.find_all {|project| project.specialism == specialism}
+  end
+
+  def self.filter_by_name(name)
+    @projects = Project.all()
+    filtered_projects = @projects.find_all {|project| project.name == name}
+  end
+
 end
