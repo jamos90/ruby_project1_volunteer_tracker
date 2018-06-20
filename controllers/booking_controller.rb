@@ -40,6 +40,9 @@ end
 
 get '/bookings/:id/edit' do
   @booking = Booking.find(params['id'])
+  @project = Project.find(params['id'])
+  @volunteer = Volunteer.find(params['id'])
+  @day = Day.find(params['id'])
   erb(:'booking/edit')
 end
 

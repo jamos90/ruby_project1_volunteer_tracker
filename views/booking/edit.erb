@@ -1,0 +1,23 @@
+<h1> Edit booking</h3>
+
+  <form action = "/bookings" method = "post" >
+    <label>
+      Select a project:
+      <select name = "project_id">
+        <option value ="<%=@project.id%>"> <%=@project.name%> - <%=@project.specialism_required  %> </option>
+      </select>
+    </label>
+
+      <label>
+        Select a volunteer:
+        <select name = "volunteer_id">
+          <option value = "<%=@volunteer.id%>"> <%=@volunteer.name%> - <%=@volunteer.specialism%></option>
+        </select>
+      </label>
+
+      <label>
+        Day of the week:
+        <select name = "day_id">
+          <option value = "<%=@day.id%>"> <<%=@day.day%></option>
+        </select>
+      </label>

@@ -16,7 +16,7 @@
 <p> Name: <%=@booking.volunteer.name%> </p>
 <p> Age: <%=@booking.volunteer.age%> </p>
 <p> specialism: <%=@booking.volunteer.specialism%> </p>
-<p> Day: <%=@booking.day%> </p>
+<p> Day: <%=@booking.day.day%> </p>
 
 
 
@@ -24,6 +24,8 @@
 <a href ="/bookings/<%=@booking.id%>/edit"> Edit this project </a>
 <br>
 <a href ="/bookings/new"> Add volunteers to this project </a>
+
+<form action="/bookings/<%=@booking.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
 
 </body>
 </html>

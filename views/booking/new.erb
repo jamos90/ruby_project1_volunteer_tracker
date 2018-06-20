@@ -4,7 +4,7 @@
      Select a project:
      <select name = "project_id">
        <% for project in @projects do%>
-       <option value ="<%=project.id  %>"> <%=project.name%> <%=project.specialism_required  %> </option>
+       <option value ="<%=project.id  %>"> <%=project.name%> - <%=project.specialism_required  %> </option>
        <%end %>
      </select>
    </label>
