@@ -64,6 +64,13 @@ class Booking
     return Volunteer.new(volunteer)
   end
 
+  def day()
+    sql = "SELECT * FROM days WHERE id = $1"
+    values = [@day_id]
+    day = SqlRunner.run(sql,values).first
+    return Day.new(day)
+  end
+
 
 
 end

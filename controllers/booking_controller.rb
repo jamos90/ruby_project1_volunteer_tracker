@@ -10,6 +10,7 @@ end
 get '/bookings/new' do
   @projects = Project.all
   @volunteers = Volunteer.all
+  @days = Day.all
   erb(:"booking/new")
 end
 
@@ -18,6 +19,7 @@ post '/bookings' do
   @project = Project.find(params['project_id'])
   @volunteer =
   Volunteer.find(params['volunteer_id'])
+  @day = Day.find(params['day_id'])
   if (!@project.is_full? && @volunteer.age > @project.age_requirement) && (@project.specialism_required == @volunteer.specialism || @project.specialism_required == 'none')
     @project.add_volunteers()
     @booking.save()

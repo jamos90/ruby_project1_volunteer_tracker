@@ -3,18 +3,30 @@
    <label>
      Select a project:
      <select name = "project_id">
-       <% for project in @projects%>
-       <option value ="<%=project.id  %>"> <%=project.name %> </option>
+       <% for project in @projects do%>
+       <option value ="<%=project.id  %>"> <%=project.name%> <%=project.specialism_required  %> </option>
        <%end %>
      </select>
+   </label>
 
      <label>
        Select a volunteer:
        <select name = "volunteer_id">
-         <%for volunteer in @volunteers%>
+         <%for volunteer in @volunteers do%>
          <option value = "<%=volunteer.id%>"> <%=volunteer.name%> - <%=volunteer.specialism%></option>
          <%end%>
        </select>
+     </label>
+
+     <label>
+       Day of the week:
+       <select name = "day_id">
+         <%for day in @days do%>
+         <option value = "<%=day.id%>"> <<%=day.day%></option>
+         <%end%>
+       </select>
+     </label>
+
 
        <input class="btn btn--action" type='submit' value="Add">
 </form>
