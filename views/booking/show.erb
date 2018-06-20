@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bookings: <<%=@booking.project.name%> </title>
+  </head>
+  <body>
+
 <h1> <%=@booking %> </h1>
 
 <p> Name: <%=@booking.project.name%> </p>
@@ -14,10 +22,7 @@
 
 <a href ="/bookings/<%=@booking.id%>/edit"> Edit this project </a>
 <br>
-<a href ="/bookings/<%=@booking.id%>/new"> Add volunteers to this project </a>
+<a href ="/bookings/new"> Add volunteers to this project </a>
 
-<br>
-
-<a href = "/"> Home </a>
-<br>
-<a href = "/projects"> All projects </a>
+</body>
+</html>

@@ -31,6 +31,12 @@ class Day
     return SqlRunner.run(sql).map {|day| Day.new(day)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM days WHERE id =$1"
+    values = [id]
+     return SqlRunner.run(sql,values).map {|day| Day.new(day)}.first()
+   end
+
 
 
 end
