@@ -101,4 +101,14 @@ class Project
   #   return @volunteers.length()
   # end
 
+  def days()
+    sql = "SELECT days.* FROM days
+    INNER JOIN bookings
+    ON bookings.day_id = days.id
+    WHERE bookings.project_id = $1"
+    values = [@id]
+    day_results = SqlRunner.run(sql,values)
+    return day_results.map {|day| Day.new(day)}
+  end
+
 end

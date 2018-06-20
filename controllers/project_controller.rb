@@ -1,11 +1,18 @@
 require('pry')
 require_relative('../models/projects')
+require_relative('../models/day')
 also_reload( '../models/*' )
 
 get '/projects' do
   @projects = Project.all()
   erb(:"project/index")
 end
+
+get '/projects/days' do
+  @project = Project.all()
+  erb(:'project/day')
+end
+
 
 get '/projects/new' do
   erb(:"project/new")

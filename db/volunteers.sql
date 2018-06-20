@@ -2,7 +2,9 @@ DROP TABLE bookings;
 DROP TABLE special_bookings;
 DROP TABLE special_projects;
 DROP TABLE projects;
+DROP TABLE days;
 DROP TABLE volunteers;
+
 
 CREATE TABLE volunteers(
   id SERIAL4 PRIMARY KEY,
@@ -21,6 +23,11 @@ CREATE TABLE projects(
   capacity INT4
 );
 
+CREATE TABLE days(
+  id SERIAL4 PRIMARY KEY,
+  day VARCHAR(255)
+);
+
 CREATE TABLE special_projects(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
@@ -34,7 +41,8 @@ CREATE TABLE special_projects(
 CREATE TABLE bookings(
   id SERIAL4 PRIMARY KEY,
   volunteer_id INT4 references volunteers(id) ON DELETE CASCADE,
-  project_id INT4 references projects(id) ON DELETE CASCADE
+  project_id INT4 references projects(id) ON DELETE CASCADE,
+  day_id INT4 references days(id) ON DELETE CASCADE
 );
 
 CREATE TABLE special_bookings(

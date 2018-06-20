@@ -2,22 +2,24 @@ require_relative('../db/sql_runner')
 
 class Booking
 
-  attr_reader :project_id, :volunteer_id, :id
+  attr_accessor :project_id, :volunteer_id, :id, :day_id
 
   def initialize (options)
     @id = options['id'].to_i()
     @project_id = options ['project_id'].to_i()
     @volunteer_id = options ['volunteer_id'].to_i()
+    @day_id = options['day_id'].to_i()
   end
 
   def save()
     sql = "INSERT INTO bookings(
     project_id,
-    volunteer_id
+    volunteer_id,
+    day_id
     ) VALUES(
-      $1,$2
+      $1,$2,$3
       )RETURNING *"
-    values = [@project_id, @volunteer_id]
+    values = [@project_id, @volunteer_id, @day_id]
     booking_results = SqlRunner.run(sql,values)
     id = booking_results.first['id']
     @id = id.to_i()
