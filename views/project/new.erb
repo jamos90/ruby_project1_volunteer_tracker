@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href= "/styles/new.css"/
+  </head>
+  <body>
+
 <h1> Create new project</h3>
 
 <form method = "post" action = "/projects" >
@@ -9,44 +18,63 @@
   id= "project-name-field"/>
 
 
-  <label for="project-type-field"> Project Type: </label>
-  <input
-  required
-  type ="text"
-  name = "type"
-  id= "project-type-field"/>
+  <label>
+    Select a project type (for general projects please select General Volunteering):
+  </label>
+  <select name = "type">
+    <option value = "General Volunteering"> General Volunteering </option>
+    <option value = "Counselling"> Counselling </option>
+    <option value = "Colthes Collection"> Clothes ollection</option>
+    <option value = "Food Bank Staffing"> Food Bank staffing </option>
+    <option value = "Elderly care"> Elderly care </option>
+    <option value = "Food Bank dontation collection/sorting"> Food Bank donation collection/sorting </option>
+  </select>
 
-  <label for="project-location-field"> Project Location: </label>
-  <input
-  required
-  type ="text"
-  name = "location"
-  id= "project-location-field"/>
 
-  <label for="project-specialism_required-field"> Project specialism: </label>
+  <label for="project-age-requirement-field"> Project Age requirement:
+  </label>
   <input
-  required
-  type ="text"
-  name = "specialism_required"
-  id= "project-specialism_required-field"/>
+    required
+    type ="number"
+    name = "age_requirement"
+    max= 99
+    min = 10
+    id="project-age-requirement-field"/>
 
-  <label for="project-age-requirement-field"> Project Age requirement: </label>
-  <input
-   required
-  type ="number"
-  name = "age_required"
-  max= 99
-  min = 10
-  id="project-age-requirement-field"/>
+
+  <label>
+    Select a project specialism (for general projects please select none):
+  </label>
+  <select name = "specialism">
+    <option value = "none"> none </option>
+    <option value = "Counselling"> Counselling </option>
+    <option value = "First Aid"> First Aid </option>
+    <option value = "Driving"> Driving </option>
+  </select>
+
 
   <label for="project-capacity-field">
-    Project Capacity:  </label>
+    Project Capacity:
+  </label>
   <input type = "number" name = "capacity"
-  max = 20
-  min = 0
-  required
-  id="project-capacity-field" />
+   max = 20
+   min = 0
+   required
+   id="project-capacity-field" />
 
-  <input type ="submit" value ="Create project" />
+
+  <label for="project-location-field"> Project Location:
+  </label>
+  <input
+   required
+   type ="text"
+   name = "location"
+   id= "project-location-field"/>
+
+
+ <input type ="submit" value ="Create project" />
 
 </form>
+
+</body>
+</html>

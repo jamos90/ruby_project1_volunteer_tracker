@@ -8,11 +8,12 @@
   <body>
 
 
-<h1> This is a page of all saved volunteers</h1>
+<h1> Current Volunteers:</h1>
 
 <%@volunteers.each do |volunteer|%>
 
 <p> Volunteer name: <%=volunteer.name%></p>
+<%=volunteer.specialism%></p>
 
 <br>
 <a href = "/volunteers/<%=volunteer.id%>"> Full detials </a>

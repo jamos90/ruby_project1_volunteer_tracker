@@ -6,30 +6,43 @@
   name = "name"
   id= "project-name-field"/>
 
-
-  <label for="project-type-field"> Project Type: </label>
-  <input
-  type ="text"
-  name = "type"
-  value= "<%=@project.type%>"
-  id= "project-type-field"/>
+  <label>
+    Select a project type (for general projects please select General Volunteering):
+  </label>
+  <select name = "type">
+    <option value = "General Volunteering"> General Volunteering </option>
+    <option value = "Counselling"> Counselling </option>
+    <option value = "Colthes Collection"> Clothes ollection</option>
+    <option value = "Food Bank Staffing"> Food Bank staffing </option>
+    <option value = "Elderly care"> Elderly care </option>
+    <option value = "Food Bank dontation collection/sorting"> Food Bank donation collection/sorting </option>
+  </select>
 
   <label for="project-location-field"> Project Location: </label>
   <input
+  required
+  max = 50
   type ="text"
   name = "location"
   value = "<%=@project.location%>"
   id= "project-location-field"/>
 
-  <label for="project-specialism_required-field"> Project specialism: </label>
-  <input
-  type ="text"
-  name = "specialism_required"
-  value = "<%=@project.specialism_required%>"
-  id= "project-specialism_required-field"/>
+  <label>
+    Select a project specialism (for general projects please select none):
+  </label>
+  <select name = "specialism_required">
+    <option value = "none"> none </option>
+    <option value = "Counselling"> Counselling </option>
+    <option value = "First Aid"> First Aid </option>
+    <option value = "Driving"> Driving </option>
+  </select>
+
 
   <label for="project-age-requirement-field"> Project Age requirement: </label>
   <input
+  min = 10
+  max= 99
+  required
   type ="number"
   name = "age_required"
   value = "<%=@project.age_requirement %>"
@@ -37,6 +50,8 @@
 
   <label for="project-capacity-field"> Project Capacity: </label>
   <input
+  min = 0
+  max = 20
   type ="number"
   name = "capacity"
   value = "<%=@project.capacity %>"

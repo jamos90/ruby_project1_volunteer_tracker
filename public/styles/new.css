@@ -1,0 +1,8 @@
+label {
+  display: inline-block;
+}
+
+select {
+  padding-bottom: 5em;
+  display: block;
+}

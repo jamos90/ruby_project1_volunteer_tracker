@@ -1,8 +1,12 @@
 <h1> Volunteers signed up to to <%=@project.name %> </h1>
 <% for volunteer in @volunteers do%>
-  <%= volunteer.name %>
+<p> Volunteer name: <p>  <%= volunteer.name %>
+  <p> Volunteer age: </p>
   <%=volunteer.age %>
+  <p> Volunteer Skill</p>
   <%=volunteer.specialism%>
+
+  <p> See more Volunteer Information <a href = "/volunteers"> here</a> </p>
 
   <br>
 <% end %>

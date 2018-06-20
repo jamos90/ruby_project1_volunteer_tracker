@@ -1,15 +1,27 @@
-<h1> Bellow are all the current saved projects</h1>
-<% @projects.each do |project|  %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Prjoect All</title>
+    <link rel="stylesheet" href= "/styles/projects/index.css"/ href="https://fonts.googleapis.com/css?family=Raleway:400,700,700i" rel="stylesheet"/>
+  </head>
 
-<p> Project name: <%=project.name%></p>
-<p> Project type: <%=project.type%></p>
-<br>
-<form action="/projects/<%=@projects.first.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+ <body>
+  <h1> Bellow are all the current saved projects</h1>
+  <% @projects.each do |project|  %>
+  <div class="project">
+  <p> Project name: <%=project.name%></p>
+  <p> Project type: <%=project.type%></p>
 
-<a href = "/projects/<%=project.id%>"> Full details </a>
-<br>
+  <br>
 
-<p><a href = "/projects/<%=project.id%>/volunteers">Find volunteers</a>  signed up to this project </p>
+  <form action="/projects/<%=@projects.first.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+
+  <a href = "/projects/<%=project.id%>"> Full details </a>
+  <br>
+
+  <p><a href = "/projects/<%=project.id%>/volunteers">Find volunteers</a>  signed up to this project </p>
+  </div>
 
 
 <% end  %>
@@ -17,3 +29,6 @@
 See list of Projects requiring volunteers <a href = "/projects/available"> here </a>
 
 <br>
+
+</body>
+</html>
