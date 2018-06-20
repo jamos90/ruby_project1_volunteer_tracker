@@ -4,20 +4,39 @@
     <label>
       Select a project:
       <select name = "project_id">
-        <option value ="<%=@project.id%>"> <%=@project.name%> - <%=@project.specialism_required  %> </option>
+        <% for project in @projects do%>
+          <% if project.id == @booking.project_id  %>
+            <option value ="<%=project.id  %>" selected="selected"> <%=project.name%> -   <%=project.specialism_required  %> </option>
+          <% else  %>
+            <option value ="<%=project.id  %>"> <%=project.name%> - <%=project.specialism_required  %> </option>
+          <%end %>
+        <%end %>
       </select>
     </label>
 
       <label>
         Select a volunteer:
         <select name = "volunteer_id">
-          <option value = "<%=@volunteer.id%>"> <%=@volunteer.name%> - <%=@volunteer.specialism%></option>
+          <%for volunteer in @volunteers do%>
+          <%if volunteer.id == @booking.volunteer_id  %>
+          <option value = "<%=volunteer.id%>" selected= "selected"> <%= volunteer.name%> - <%=volunteer.specialism%></option>
+          <%else%>
+          <%end%>
+         <%end%>
         </select>
       </label>
 
       <label>
         Day of the week:
-        <select name = "day_id">
-          <option value = "<%=@day.id%>"> <<%=@day.day%></option>
+        <!-- <select name = "day_id" hidden> -->
+        <select name = "day_id" >
+          <%for day in @days do%>
+          <option value = "<%=day.id%>"> <%=day.day%></option>
+          <%end%>
         </select>
       </label>
+
+
+        <input class="btn btn--action" type='submit' value="Add">
+
+  </form>

@@ -93,6 +93,15 @@ class Project
     return false
   end
 
+  def is_empty?
+    return true if @capacity == @capacity
+    return false
+  end
+
+  def remove_volunteers()
+    @capacity +=1
+  end
+
   def add_volunteers()
     @capacity -= 1
   end

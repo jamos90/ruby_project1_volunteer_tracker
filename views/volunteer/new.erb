@@ -7,16 +7,28 @@
   name = "name"
   id= "volunteer-name-field"/>
 
+  <label>
+    Select a volunteer specialism (for general volunteers please select none):
+    <select name = "specialism">
+      <option value = "Driving"> none </option>
+    <option value = "Counselling"> Counselling </option>
+    <option value = "First Aid"> First Aid </option>
+    <option value = "Driving"> Driving </option>
+    </select>
+  </label>
 
-  <label for="volunteer-specialism-field"> specialism: </label>
+<!--
+  <label for="volunteer-specialism-field"> Specialism: </label>
   <input
   type ="text"
   name = "specialism"
-  id= "volunteer-specialism-field"/>
+  id= "volunteer-specialism-field"/> -->
 
   <label for="volunteer-age-field"> Age<input
   type ="number"
   name = "age"
+  max = 99
+  min = 16
   id= "volunteer-age-field"/>
 
 

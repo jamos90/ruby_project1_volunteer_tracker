@@ -20,9 +20,10 @@ post '/bookings' do
   @volunteer =
   Volunteer.find(params['volunteer_id'])
   @day = Day.find(params['day_id'])
-  if (!@project.is_full? && @volunteer.age > @project.age_requirement) && (@project.specialism_required == @volunteer.specialism || @project.specialism_required == 'none')
+  if (!@project.is_full? && @volunteer.age >= @project.age_requirement) && (@project.specialism_required == @volunteer.specialism || @project.specialism_required == 'none')
     @project.add_volunteers()
     @booking.save()
+    @project.update()
   else
     redirect to '/bookings/error'
   end
@@ -40,9 +41,9 @@ end
 
 get '/bookings/:id/edit' do
   @booking = Booking.find(params['id'])
-  @project = Project.find(params['id'])
-  @volunteer = Volunteer.find(params['id'])
-  @day = Day.find(params['id'])
+  @projects = Project.all()
+  @volunteers = Volunteer.all()
+  @days = Day.all()
   erb(:'booking/edit')
 end
 
@@ -53,6 +54,13 @@ end
 
 post '/bookings/:id/delete' do
   booking = Booking.find(params['id'])
+  @project = Project.find(booking.project_id)
+  # if !@project.is_empty
+  @project.remove_volunteers
+  
   booking.delete()
+  @project.update()
+
+# end
   redirect to '/bookings'
 end
