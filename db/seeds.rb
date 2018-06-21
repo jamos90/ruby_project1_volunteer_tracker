@@ -129,37 +129,37 @@ project3 = Project.new({
 
   day7.save()
 
-  # booking1 = Booking.new({
-  #   'project_id'   => project1.id,
-  #   'volunteer_id' => volunteer1.id,
-  #   'day_id'       => day1.id
-  #   })
-  #
-  #   booking1.save()
-  #
-  # booking2 = Booking.new({
-  #   'project_id'   => project1.id,
-  #   'volunteer_id' => volunteer2.id,
-  #   'day_id'       => day2.id
-  #   })
-  #
-  #   booking2.save()
-  #
-  # booking3 = Booking.new({
-  #   'project_id'   => project1.id,
-  #   'volunteer_id' => volunteer2.id,
-  #   'day_id'       => day3.id
-  #   })
-  #
-  #     booking3.save()
-  #
-  # booking4 = Booking.new({
-  #   'project_id'   => project1.id,
-  #   'volunteer_id' => volunteer2.id,
-  #   'day_id'       => day4.id
-  #   })
-  #
-  #   booking4.save()
+  booking1 = Booking.new({
+    'project_id'   => project1.id,
+    'volunteer_id' => volunteer1.id,
+    'day_id'       => day1.id
+    })
+
+    booking1.save()
+
+  booking2 = Booking.new({
+    'project_id'   => project1.id,
+    'volunteer_id' => volunteer2.id,
+    'day_id'       => day2.id
+    })
+
+    booking2.save()
+
+  booking3 = Booking.new({
+    'project_id'   => project1.id,
+    'volunteer_id' => volunteer2.id,
+    'day_id'       => day3.id
+    })
+
+      booking3.save()
+
+  booking4 = Booking.new({
+    'project_id'   => project1.id,
+    'volunteer_id' => volunteer2.id,
+    'day_id'       => day4.id
+    })
+
+    booking4.save()
 
   binding.pry
 

@@ -1,8 +1,9 @@
 <h1> Project by days </h1>
 
 <%@project.each do |project| %>
- <!-- <%skip if project.days == nil%> -->
- <!-- <%end%> -->
- <%=project.days()%>
+
+ <p> Project name: <%=project.name()  %></p>
+ <p> Project day: <%=project.days()%></p>
+
 
 <%end%>

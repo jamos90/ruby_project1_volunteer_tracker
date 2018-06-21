@@ -77,6 +77,9 @@ class Booking
     SqlRunner.run(sql,values)
   end
 
+  def is_present?()
+  end
+
 
 
 end
