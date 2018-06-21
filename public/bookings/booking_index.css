@@ -1,10 +1,9 @@
-
 h1 {
   font-family: 'Raleway', sans-serif;
   text-align: center;
   left: 15em;
   font-weight: lighter;
-  background-color: hsla(205, 61%, 70%,0.7)
+  background-color: hsla(205, 61%, 70%,0.7);
 }
 
 p {
@@ -12,16 +11,16 @@ p {
   text-align: center;
 }
 
- .details {
+.details  a {
   font-family: 'Raleway', sans-serif;
   font-weight: lighter;
   position: relative;
-  left: 38em;
-  padding-bottom: 2em;
+  right: 50em;
+
 }
 
 
-.volunteers a:hover {
+a:hover {
   color: red;
 }
 

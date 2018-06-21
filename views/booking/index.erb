@@ -1,11 +1,17 @@
+<link
+  href="/bookings/booking_index.css" rel = "stylesheet"/>
+ <link href= "https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
+
 <h1>  Bookings Page </h1>
 <%@bookings.each do |booking|%>
 
 <p> Project name: <%=booking.project.name%> </p>
 <p> Volunteer name: <%=booking.volunteer.name%> </p>
 
-<a href = "/bookings/<%=booking.id%>"> Show full details  </a>
+<p> <a class ="details" href = "/bookings/<%=booking.id%>"> Show full details  </a></p>
 
 <form action="/bookings/<%=booking.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+
+<hr>
 
 <%end%>

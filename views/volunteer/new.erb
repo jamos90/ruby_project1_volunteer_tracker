@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title> Create a new volunteer</title>
-  </head>
+<link
+      href="/styles/volunteers/volunteer_new.css" rel = "stylesheet"/>
+  <link    href="https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
   <body>
 
 <h1> Create a new Volunteers</h3>
@@ -16,6 +13,10 @@
   name = "name"
   id= "volunteer-name-field"/>
 
+  <br>
+  <br>
+
+
   <label>
     Select a volunteer specialism (for general volunteers please select none):</label>
     <select name = "specialism">
@@ -26,6 +27,10 @@
     <!-- <input required hidden/> -->
     </select>
 
+    <br>
+    <br>
+
+
 
 
   <label for="volunteer-age-field"> Age:</label>
@@ -34,11 +39,14 @@
     type ="number"
     name = "age"
     max = 99
-    min = 0
+    min = 16
     id= "volunteer-age-field"/>
 
+    <br>
+    <br>
 
-  <input type ="submit" value ="Create a volunteer" />
+
+  <input class="submit" type ="submit" value ="Create a volunteer" />
 
 </form>
 

@@ -18,14 +18,15 @@
   <% @projects.each do |project|  %>
   <div class="project">
   <p> Project name: <%=project.name%></p>
+  <br>
   <p> Project type: <%=project.type%></p>
 
   <br>
 
-  <a href = "/projects/<%=project.id%>"> Full details </a>
+  <a class = 'full' href = "/projects/<%=project.id%>"> Full details </a>
   <br>
 
-  <p><a href = "/projects/<%=project.id%>/volunteers">Find volunteers</a>  signed up to this project </p>
+  <p class ="find"><a href = "/projects/<%=project.id%>/volunteers">Find volunteers</a>  signed up to this project </p>
   </div>
 
     <form action="/projects/<%=@projects.first.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
@@ -33,10 +34,6 @@
   <hr>
 
 <% end  %>
-
-See list of Projects requiring volunteers <a href = "/projects/available"> here </a>
-
-<br>
 
 </body>
 </html>

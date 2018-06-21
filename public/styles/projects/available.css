@@ -5,6 +5,7 @@ h1 {
   text-align: center;
   padding-bottom: 2em;
   padding-top: 2em;
+  background-color: hsla(205, 61%, 70%,0.7)
 }
 
 p {

@@ -1,16 +1,13 @@
-img {
-  height: 15em;
-  width: 13em;
-  position: relative;
-  right: 2em;
-}
-
-
-
+/* body {
+  background-color: #aacfd0
+} */
 
 p {
   font-family: 'Raleway', sans-serif;
   font-size: 1em;
+  padding-left: 1em;
+  text-align: center;
+  padding-top: 1em;
 }
 
 .volunteers {
@@ -20,17 +17,20 @@ p {
   top: 5em;
 }
 
-.volunteers h1 {
+h1 {
   font-family: 'Raleway', sans-serif;
-  position: relative;
-  background-color: hsla(205, 61%, 70%,0.7)
-  /* right: 1em; */
+  text-align:center;
+  font-weight: lighter;
+   color: hsla(205, 61%, 70%,0.7)
 }
 
-.volunteers a {
+.project_show {
   font-family: 'Raleway',sans-serif;
   font-weight: lighter;
   color: black;
+  position: relative;
+  left: 37em;
+  padding-bottom: 2em;
 }
 
 .volunteers form {

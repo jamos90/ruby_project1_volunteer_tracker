@@ -12,26 +12,23 @@ p {
   text-align: center;
 }
 
- .details {
-  font-family: 'Raleway', sans-serif;
-  font-weight: lighter;
-  position: relative;
-  left: 38em;
-  padding-bottom: 2em;
+form {
+  padding-left: 2em;
 }
 
+/* input {
+  padding-bottom: : 1em;
+} */
+
+select {
+  padding-bottom: 1em;
+}
 
 .volunteers a:hover {
   color: red;
 }
 
-input:hover{
+ .submit:hover{
   position: relative;
   cursor: wait;
-}
-
-input{
-  position: relative;
-  left: 56.5em;
-  padding-top: 2em;
 }

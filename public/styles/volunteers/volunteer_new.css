@@ -1,10 +1,10 @@
-
 h1 {
   font-family: 'Raleway', sans-serif;
   text-align: center;
   left: 15em;
   font-weight: lighter;
   background-color: hsla(205, 61%, 70%,0.7)
+;
 }
 
 p {
@@ -20,18 +20,26 @@ p {
   padding-bottom: 2em;
 }
 
+label {
+  padding-left: 1em;
+}
+
 
 .volunteers a:hover {
   color: red;
 }
 
-input:hover{
+.submit {
+  padding-left: 1em;
+}
+
+.submit:hover{
   position: relative;
   cursor: wait;
 }
 
-input{
+/* input{
   position: relative;
   left: 56.5em;
   padding-top: 2em;
-}
+} */

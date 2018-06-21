@@ -1,10 +1,9 @@
-
 h1 {
   font-family: 'Raleway', sans-serif;
   text-align: center;
   left: 15em;
   font-weight: lighter;
-  background-color: hsla(205, 61%, 70%,0.7)
+  background-color: hsla(205, 61%, 70%,0.7);
 }
 
 p {
@@ -25,13 +24,11 @@ p {
   color: red;
 }
 
-input:hover{
+.submit:hover{
   position: relative;
   cursor: wait;
 }
 
-input{
-  position: relative;
-  left: 56.5em;
-  padding-top: 2em;
+form {
+  padding-left: 2em;
 }

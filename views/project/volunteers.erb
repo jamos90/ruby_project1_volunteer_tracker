@@ -1,10 +1,22 @@
+<link
+    href="/styles/projects/find.css" rel = "stylesheet"
+    href="https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
+
 <h1> Volunteers signed up to to     <%=@project.name %> </h1>
+<br>
 <% for volunteer in @volunteers do%>
-<p> Volunteer name: <p>  <%= volunteer.name %>
+<br>
+<p> Volunteer name: <p>
+<p><%= volunteer.name %></p>
+
   <p> Volunteer age: </p>
-  <%=volunteer.age %>
+
+  <p><%=volunteer.age %></p>
+
   <p> Volunteer Skill</p>
-  <%=volunteer.specialism%>
+  
+<p>  <%=volunteer.specialism%> </p>
+  <br>
 
   <p> See more Volunteer Information <a href = "/volunteers"> here</a> </p>
 

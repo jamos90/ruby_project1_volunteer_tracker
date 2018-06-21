@@ -1,14 +1,29 @@
+<link
+  href="/styles/projects/project_show.css" rel = "stylesheet"/>
+ <link href= "https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
+
 <h1> <%=@project.name %> </h1>
+<br>
 
 <p> Type: <%=@project.type%> </p>
+
+<br>
 <p> Location: <%=@project.location%> </p>
-<p> specialism: <%=@project.specialism_required%> </p>
+
+<br>
+<p> Specialism: <%=@project.specialism_required%> </p>
+
+<br>
 <p> Age requirement: <%=@project.age_requirement%> </p>
+
+<br>
 
 <p> Capacity: <%=@project.capacity%> </p>
 
-<a href ="/projects/<%=@project.id%>/edit"> Edit this project </a>
 <br>
-<a href ="/bookings/new"> Add volunteers to this project </a>
+
+<a class="project_show" href ="/projects/<%=@project.id%>/edit"> Edit this project </a>
+<br>
+<a class="project_show" href ="/bookings/new"> Add volunteers to this project </a>
 
 <br>

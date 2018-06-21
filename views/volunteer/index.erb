@@ -6,29 +6,29 @@
 
 <div class="volunteers">
 
-  
+
 
 <%@volunteers.each do |volunteer|%>
 
 <p> Volunteer name:
   <br>
 <%=volunteer.name%></p>
-
 <br>
 
 <p> Volunteer Skill:
-
-
+<br>
 <%=volunteer.specialism%></p>
 
 <br>
-<a href = "/volunteers/<%=volunteer.id%>"> Full detials </a>
+<a class = "details" href = "/volunteers/<%=volunteer.id%>"> Full detials </a>
+<br>
+
 <br>
 
 <form action="/volunteers/<%=@volunteers.first.id %>/delete" method="POST"><input id="delete" type="submit" value="Delete"></form>
-<br>
 
-<br>
+
+<hr>
 <%end%>
 </div>
 
