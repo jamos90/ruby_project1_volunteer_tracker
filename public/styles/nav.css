@@ -22,3 +22,9 @@ a:active{
   top:0.25em;
 
 }
+
+a:hover{
+  color: red;
+  position: relative;
+  bottom: 0.1em;
+}

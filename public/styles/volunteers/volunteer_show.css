@@ -1,6 +1,9 @@
 img {
-  height: 10em;
-  width: 10em;
+  height: 15em;
+  width: 13em;
+  position: relative;
+  right: 2em;
+
 }
 
 body {
@@ -21,8 +24,7 @@ p {
 
 .volunteers h1 {
   font-family: 'Raleway', sans-serif;
-  position: relative;
-  left: 0.8em;
+  position: relative;;
 }
 
 .volunteers a {
