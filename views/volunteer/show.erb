@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Volunteers:all</title>
-    <link href ="/styles/volunteer_show.css" rel = "stylesheet" />
-
-
+    <link href ="/styles/volunteers/volunteer_show.css" rel = "stylesheet"
+    href="https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
   </head>
   <body>
 
+<div class = "volunteers">
+
 <h1> <%=@volunteer.name %> </h1>
 
-<img src ="/volunteer_images/profile.jpg">
+<img src ="<%=@volunteer_images.shuffle.first%>">
 <p> Name: <%=@volunteer.name%> </p>
 <p> Age: <%=@volunteer.age%> </p>
 <p> Specialism: <%=@volunteer.specialism%> </p>
@@ -20,6 +21,8 @@
 <a href ="/volunteers/<%=@volunteer.id%>/edit"> Edit this volunteer </a>
 
 <form action="/volunteers/<%=@volunteer.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+
+</div>
 
 <br>
 

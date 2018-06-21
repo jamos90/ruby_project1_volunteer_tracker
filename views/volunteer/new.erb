@@ -1,6 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Create a new volunteer</title>
+  </head>
+  <body>
+
 <h1> Create a new Volunteers</h3>
 
-<form method = post action = "/volunteers" >
+<form method = "post" action = "/volunteers" >
   <label for="volunteer-name-field"> Full Name: </label>
   <input
   required
@@ -15,20 +23,24 @@
     <option value = "Counselling"> Counselling </option>
     <option value = "First Aid"> First Aid </option>
     <option value = "Driving"> Driving </option>
-    <input required hidden/>
+    <!-- <input required hidden/> -->
     </select>
 
 
 
-  <label for="volunteer-age-field"> Age<input
+  <label for="volunteer-age-field"> Age:</label>
+    <input
     required
-  type ="number"
-  name = "age"
-  max = 99
-  min = 0
-  id= "volunteer-age-field"/>
+    type ="number"
+    name = "age"
+    max = 99
+    min = 0
+    id= "volunteer-age-field"/>
 
 
   <input type ="submit" value ="Create a volunteer" />
 
 </form>
+
+</body>
+</html>

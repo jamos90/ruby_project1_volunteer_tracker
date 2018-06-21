@@ -1,0 +1,37 @@
+img {
+  height: 10em;
+  width: 10em;
+}
+
+body {
+  background-color: #aacfd0
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+}
+
+.volunteers {
+  flex-direction: row;
+  position: relative;
+  left: 34em;
+  top: 5em;
+}
+
+.volunteers h1 {
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  left: 0.8em;
+}
+
+.volunteers a {
+  font-family: 'Raleway',sans-serif;
+  font-weight: lighter;
+  color: black;
+}
+
+.volunteers form {
+  position: relative;
+  top: 2em;
+}

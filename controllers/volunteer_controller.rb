@@ -12,6 +12,7 @@ get '/volunteers/new' do
 
 get '/volunteers/:id' do
   @volunteer = Volunteer.find(params['id'])
+  @volunteer_images = ["/volunteer_images/model_1.jpg","/volunteer_images/profile.jpg", "/volunteer_images/vietnam_1.jpg"]
   erb(:'volunteer/show')
 end
 

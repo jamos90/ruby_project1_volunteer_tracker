@@ -3,7 +3,9 @@
 <%@project.each do |project| %>
 
  <p> Project name: <%=project.name()  %></p>
- <p> Project day: <%=project.days()%></p>
 
+  <%project.days.each do |day|%>
+  <p> Project day: <%=day.day()%>
+ <%end%>
 
-<%end%>
+ <%end%>

@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Volunteers - Home</title>
-    <link
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
   </head>
+
   <body>
 
 
 <h1> Current Volunteers:</h1>
+
+<div class="volunteers">
 
 <%@volunteers.each do |volunteer|%>
 
@@ -19,6 +22,7 @@
 <a href = "/volunteers/<%=volunteer.id%>"> Full detials </a>
 
 <form action="/volunteers/<%=@volunteers.first.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+</div>
 <%end%>
 
 <a href = "/"> Home </a>
