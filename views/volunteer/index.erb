@@ -1,26 +1,23 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Volunteers - Home</title>
-    <link
+<link
     href="/styles/volunteers/volunteers_index.css" rel = "stylesheet"
     href="https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
-  </head>
-
-  <body>
-
 
 <h1> Current Volunteers:</h1>
 
 <div class="volunteers">
 
+  
+
 <%@volunteers.each do |volunteer|%>
 
 <p> Volunteer name:
+  <br>
 <%=volunteer.name%></p>
 
+<br>
+
 <p> Volunteer Skill:
+
 
 <%=volunteer.specialism%></p>
 
@@ -34,6 +31,7 @@
 <br>
 <%end%>
 </div>
+
 
 </body>
 </html>

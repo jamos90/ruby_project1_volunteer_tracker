@@ -1,0 +1,35 @@
+.project {
+  border: 1px, solid, black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  left: 15em;
+  font-weight: lighter;
+  background-color: red;
+}
+
+div {
+  position: center
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+a{
+  font-family: 'Raleway', sans-serif;
+  align-self:center;
+}
+
+input {
+ position: relative;
+ left: 57em;
+}

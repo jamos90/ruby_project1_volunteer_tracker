@@ -1,15 +1,19 @@
 
 h1 {
   font-family: 'Raleway', sans-serif;
-  position: relative;
+  text-align: center;
   left: 15em;
+  font-weight: lighter;
+  background-color: red;
 }
 
 div {
   position: center
-
 }
 
+p {
+  font-family: 'Raleway', sans-serif;
+}
 .volunteers {
   display: flex;
   flex-direction: row;
@@ -17,8 +21,7 @@ div {
   flex-basis: auto;
   position: relative;
   top: 10em;
-  border: 0.5em, solid, black;
-  left: 9em;
+  padding-left: 9em;
   padding-bottom: 1em;
   align-content: space-between;
   flex-flow: row;
@@ -31,13 +34,13 @@ div {
 
 .volunteers p {
   font-family: 'Raleway',sans-serif;
-  padding: 0.1em;
+  padding: 0.2em;
 }
 
 .volunteers a {
   position: relative;
   top: 5em;
-  right: 12em;
+  right: 18em;
 }
 
 .volunteers form {
@@ -48,14 +51,8 @@ div {
 
 .volunteers input {
   position: relative;
-  top: 15em;
-  right: 29em;
-}
-
-#delete input {
-  position: relative;
-  top: 5em;
-
+  top: 14em;
+  right: 32em;
 }
 
 .volunteers a:hover {

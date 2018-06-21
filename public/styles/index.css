@@ -15,6 +15,7 @@ body {
   background-image: url("/volunteering2.jpg");
   background-size: cover;
   background-blend-mode: soft-light;
+  background-repeat: no-repeat;
 }
 
 .home_links {

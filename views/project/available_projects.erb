@@ -1,12 +1,16 @@
-<h1> Bellow are all that still require volunteers</h1>
+<link href = "/styles/projects/available.css" rel = "stylesheet"
+href="https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
+
+<h1> Projects that still require volunteers</h1>
+<div class = "available_projects">
 <% @projects.each do |project|  %>
 <%if project.capacity != 0  %>
 <p> Project name: <%=project.name%></p>
 <p> Project type: <%=project.type%></p>
 <p> Spaces available: <%=project.capacity%></p>
-Add volunteers to this project: <a href = "/bookings/new"> Create a new booking</a>
+<p> Add volunteers to this project: <a href = "/bookings/new"> Create a new booking</a></p>
+</div>
 <br>
-
+<hr>
 <%end%>
 <%end%>
-<br>
