@@ -12,7 +12,7 @@ get '/volunteers/new' do
 
 get '/volunteers/:id' do
   @volunteer = Volunteer.find(params['id'])
-  @volunteer_images = ["/volunteer_images/profile.jpg", "/volunteer_images/volunteer_2.jpg","/volunteer_images/volunteer_3.jpg","/volunteer_images/volunteer_4.jpg","/volunteer_images/volunteer_5.jpg", "/volunteer_images/volunteer_6.jpg"]
+  @volunteer_images = ["/volunteer_images/profile.jpg", "/volunteer_images/volunteer_3.jpg","/volunteer_images/volunteer_4.jpg","/volunteer_images/volunteer_5.jpg", "/volunteer_images/volunteer_6.jpg"]
   erb(:'volunteer/show')
 end
 
