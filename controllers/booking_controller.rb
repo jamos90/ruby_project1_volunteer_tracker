@@ -20,7 +20,7 @@ post '/bookings' do
   @volunteer =
   Volunteer.find(params['volunteer_id'])
   @day = Day.find(params['day_id'])
-  if (!@project.is_full? && @volunteer.age >= @project.age_requirement) && (@project.specialism_required == @volunteer.specialism || @project.specialism_required == 'General Volunteer')
+  if (!@project.is_full? && @volunteer.age >= @project.age_requirement) && (@project.specialism_required == @volunteer.specialism || @project.specialism_required == 'General Volunteer') 
     @project.add_volunteers()
     @booking.save()
     @project.update()

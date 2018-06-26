@@ -12,8 +12,10 @@
      Select a project:
      <select name = "project_id">
        <% for project in @projects do%>
+       <%if project.capacity != 0 %>
        <option value ="<%=project.id  %>"> <%=project.name%> - <%=project.specialism_required  %> - <%=project.age_requirement%> </option>
        <%end %>
+      <%end %>
      </select>
    </label>
    <br>

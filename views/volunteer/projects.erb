@@ -1,0 +1,16 @@
+<link
+    href="/styles/projects/find.css" rel = "stylesheet"
+    href="https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
+
+
+<h1> Projects <%=@volunteer.name%> is signed up to </h1>
+<br>
+<%for project in @projects do%>
+<br>
+<p> Project Name: </p>
+<p> <%=project.name %>
+  <br>
+<p> Project type: </p>
+<p> <%=project.type%></p>
+<br>
+<%end%>

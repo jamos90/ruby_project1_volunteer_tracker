@@ -1,0 +1,42 @@
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+  padding-left: 1em;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.volunteers {
+  flex-direction: row;
+  position: relative;
+  left: 34em;
+  top: 5em;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  text-align:center;
+  font-weight: lighter;
+   background-color: hsla(205, 61%, 70%,0.7)
+}
+
+.project_show {
+  font-family: 'Raleway',sans-serif;
+  font-weight: lighter;
+  color: black;
+  position: relative;
+  left: 37em;
+  padding-bottom: 2em;
+}
+
+.volunteers form {
+  position: relative;
+  top: 4em;
+  left: 3em;
+}
+
+input:hover {
+  cursor: wait;
+  position: relative;
+  bottom: 0.2em;
+}

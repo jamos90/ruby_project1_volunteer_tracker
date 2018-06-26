@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Bookings: <<%=@booking.project.name%> </title>
-  </head>
+<link href="/bookings/booking_show.css" rel = "stylesheet"/>
+ <link href ="https://fonts.googleapis.com/css?family=Lobster|Raleway:400,700,700i"/>
   <body>
 
 <h1> <%=@booking.project.name%> <%=@booking.volunteer.name%> Booking details </h1>
 
 <p> Name: <%=@booking.project.name%> </p>
 <p> Type: <%=@booking.project.type%> </p>
-<p> specialism: <%=@booking.project.location%> </p>
+<p> Specialism: <%=@booking.project.location%> </p>
 <p> Age requirement: <%=@booking.project.age_requirement%> </p>
 <p> Capacity: <%=@booking.project.capacity%>
+  <br>
 <p> Name: <%=@booking.volunteer.name%> </p>
 <p> Age: <%=@booking.volunteer.age%> </p>
-<p> specialism: <%=@booking.volunteer.specialism%> </p>
+<p> Specialism: <%=@booking.volunteer.specialism%> </p>
 <p> Day: <%=@booking.day.day%> </p>
 
 

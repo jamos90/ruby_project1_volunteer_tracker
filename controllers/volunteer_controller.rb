@@ -21,6 +21,12 @@ post '/volunteers' do
    redirect to '/volunteers'
 end
 
+get "/volunteers/:id/project" do
+  @volunteer = Volunteer.find(params['id'])
+  @projects = @volunteer.projects()
+  erb(:'volunteer/projects')
+end
+
 get '/volunteers/:id/edit' do
   @volunteer = Volunteer.find(params['id'])
   erb(:'volunteer/edit')
